@@ -1,3 +1,7 @@
+// THIS WORK WAS OUR OWN WORK. IT WAS WRITTEN WITHOUT CONSULTING
+// WORK WRITTEN BY OTHER STUDENTS OR COPIED FROM ONLINE RESOURCES.
+// Marcus Cheema
+
 #include <toneAC.h>
 #include <LiquidCrystal.h>
 
@@ -127,7 +131,7 @@ void setup() {
   }
   pinMode(octaveUpPin, INPUT_PULLUP);
   pinMode(octaveDownPin, INPUT_PULLUP);
-  // lcd.begin(16, 2);
+          
   lcd.begin(16, 2); // Initialize LCD
   lcd.createChar(0, customEighth);
   lcd.createChar(1, customDoubleEighth);
@@ -191,5 +195,5 @@ void loop() {
   }
 
   if (!notePlayed) { toneAC(); }
-  Serial.println(volume);
+  // Serial.println(volume);
 }
