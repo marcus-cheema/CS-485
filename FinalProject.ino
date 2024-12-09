@@ -100,7 +100,7 @@ int volume;
 int currentOctave = 2; // Default octave
 bool keyTouched = false;
 
-void displayWelcome() {
+void displayWelcome() { // Displays Welcome Screen (when initially plugged in, and no keys are pressed)
   // First Row
   lcd.setCursor(0, 0);
   for (int c = 0; c < 16; c++) {
@@ -133,7 +133,8 @@ void setup() {
   pinMode(octaveDownPin, INPUT_PULLUP);
           
   lcd.begin(16, 2); // Initialize LCD
-  lcd.createChar(0, customEighth);
+          
+  lcd.createChar(0, customEighth); // Initialize customChars
   lcd.createChar(1, customDoubleEighth);
   lcd.createChar(2, customQuarter);
   lcd.createChar(3, customRest);
@@ -184,7 +185,7 @@ void loop() {
     }
   }
   
-  if (keyTouched) {
+  if (keyTouched) { // Modify LCD Display for stats if keyTouched
     lcd.setCursor(0, 1);
     lcd.print("Vol: ");
     lcd.print(volume);
